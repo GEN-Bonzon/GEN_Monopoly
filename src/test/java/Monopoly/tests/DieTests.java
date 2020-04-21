@@ -13,6 +13,6 @@ public class DieTests {
         dice.roll();
 
         assertTrue(dice.getFaceValue() < 7);
-        assertTrue(dice.getFaceValue() > 0);
+        assertFalse(dice.getFaceValue() < 0);
     }
 }

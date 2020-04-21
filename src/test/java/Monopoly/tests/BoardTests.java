@@ -1,14 +1,21 @@
 package Monopoly.tests;
 
 import Monopoly.impl.Board;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 public class BoardTests {
+    private Board board;
+
+    @BeforeEach
+    void boardInit() {
+        board = new Board();
+    }
+
     @Test
     void theFirstSquareShouldBeNamedGO() {
-        Board board = new Board();
         String obtained = board.getSquare(0).getName();
 
         String expected = "GO";
@@ -18,7 +25,6 @@ public class BoardTests {
 
     @Test
     void lastSquareShouldBeNamed39() {
-        Board board = new Board();
         String obtained = board.getSquare(39).getName();
 
         String expected = "Square#39";
@@ -28,7 +34,6 @@ public class BoardTests {
 
     @Test
     void squaresShouldWrapAroundBoard() {
-        Board board = new Board();
         String obtained = board.getSquare(41).getName();
 
         String expected = "Square#1";
