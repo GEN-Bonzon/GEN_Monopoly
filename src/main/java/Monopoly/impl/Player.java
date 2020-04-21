@@ -7,22 +7,20 @@ public class Player {
     private Die[] dice;
     private Board board;
     private int cash;
+    private Cup cup;
 
     public Player(String name, Die[] dice, Board board) {
         this.name = name;
         this.piece = new Piece("pieceOf" + this.name, board.getSquare(0));
         this.dice = dice;
         this.board = board;
+        this.cup = new Cup(2);
     }
 
     public void takeTurn() {
-        int rollValue = 0;
-
         //Roll dice
-        for(Die d : dice) {
-            d.roll();
-            rollValue += d.getFaceValue();
-        }
+        cup.roll();
+        int rollValue = cup.getTotal();
 
         //Calc new location
         Square oldLoc = piece.getLocation();
