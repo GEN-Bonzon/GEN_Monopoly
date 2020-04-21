@@ -30,6 +30,9 @@ public class Player {
 
         //Move to new location
         piece.setLocation(newLoc);
+
+        //Check which type of Square the player landed
+        piece.getLocation().landedOn(this);
     }
 
     public String getName() {
@@ -42,5 +45,17 @@ public class Player {
 
     public void addCash(int amount) {
         cash += amount;
+    }
+
+    public void reduceCash(int amount) {
+        cash -= amount;
+    }
+
+    public int getNetWorth() {
+        return cash;
+    }
+
+    public Board getBoard() {
+        return board;
     }
 }
