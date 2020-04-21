@@ -3,7 +3,7 @@ package Monopoly.impl;
 public class Die {
     private int faceValue;
 
-    Die() {
+    public Die() {
         faceValue = 0;
     }
 
