@@ -45,7 +45,7 @@
 				<configuration>
 					<archive>
 						<manifest>
-							<mainClass>Monopoly.impl.MonopolyGame</mainClass>
+							<mainClass>Monopoly</mainClass>
 						</manifest>
 					</archive>
 				</configuration>

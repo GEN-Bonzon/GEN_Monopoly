@@ -10,7 +10,7 @@ public class MonopolyGame {
     private ArrayList<Die> dice;
     private ArrayList<Player> players;
 
-    MonopolyGame(int nbPlayer) {
+    public MonopolyGame(int nbPlayer) {
         if(nbPlayer < 2) {
             throw new IllegalArgumentException("Needs at least 2 players!");
         }
