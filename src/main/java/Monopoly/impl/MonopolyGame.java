@@ -11,12 +11,8 @@ public class MonopolyGame {
     private ArrayList<Player> players;
 
     public MonopolyGame(int nbPlayer) {
-        if(nbPlayer < 2) {
-            throw new IllegalArgumentException("Needs at least 2 players!");
-        }
-
-        if(nbPlayer > 8) {
-            throw new IllegalArgumentException("Too many players (max 8)!");
+        if(nbPlayer < 2 || nbPlayer > 8) {
+            throw new IllegalArgumentException("There should be between 2 and 8 players");
         }
 
         this.roundCnt = 0;
@@ -39,5 +35,9 @@ public class MonopolyGame {
         for(Player p : players) {
             p.takeTurn();
         }
+    }
+
+    public int getRoundCnt() {
+        return roundCnt;
     }
 }
