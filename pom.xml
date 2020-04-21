@@ -10,15 +10,20 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.8</maven.compiler.source>
-		<maven.compiler.target>${maven.compiler.source}</maven.compiler.target>
-		<junit.jupiter.version>5.4.1</junit.jupiter.version>
+		<maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
 
 	<dependencies>
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
-			<artifactId>junit-jupiter</artifactId>
-			<version>${junit.jupiter.version}</version>
+			<artifactId>junit-jupiter-api</artifactId>
+			<version>5.7.0-M1</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-engine</artifactId>
+			<version>5.7.0-M1</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
@@ -27,9 +32,8 @@
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.8.0</version>
+				<version>3.8.1</version>
 			</plugin>
-			<!-- JUnit 5 requires Surefire version 2.22.1 or higher -->
 			<plugin>
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>2.22.1</version>
@@ -37,10 +41,11 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
+				<version>3.2.0</version>
 				<configuration>
 					<archive>
 						<manifest>
-							<mainClass>MonopolyGame</mainClass>
+							<mainClass>Monopoly.impl.MonopolyGame</mainClass>
 						</manifest>
 					</archive>
 				</configuration>
