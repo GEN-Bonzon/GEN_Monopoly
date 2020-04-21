@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>gen.tiffanybonzon</groupId>
-	<artifactId>junit5-jupiter-starter-maven</artifactId>
+	<artifactId>GEN_Monopoly</artifactId>
 	<version>1.0-SNAPSHOT</version>
 
 	<properties>
@@ -40,7 +40,7 @@
 				<configuration>
 					<archive>
 						<manifest>
-							<mainClass></mainClass>
+							<mainClass>MonopolyGame</mainClass>
 						</manifest>
 					</archive>
 				</configuration>
