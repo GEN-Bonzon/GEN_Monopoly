@@ -9,10 +9,10 @@ public class Board {
     public Board() {
         squares = new ArrayList<>();
 
-        squares.add(0, new Square("GO"));
+        squares.add(0, new GoSquare("GO"));
 
         for(int i = 1; i < MAX_SQUARES; ++i) {
-            squares.add(i, new Square("Square#" + i));
+            squares.add(i, new RegularSquare("Square#" + i));
         }
     }
 

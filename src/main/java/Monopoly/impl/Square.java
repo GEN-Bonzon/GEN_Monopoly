@@ -1,6 +1,6 @@
 package Monopoly.impl;
 
-public class Square {
+public abstract class Square {
     private String name;
 
     public Square(String name) {
@@ -10,4 +10,6 @@ public class Square {
     public String getName() {
         return name;
     }
+
+    public abstract void landedOn(Player player);
 }

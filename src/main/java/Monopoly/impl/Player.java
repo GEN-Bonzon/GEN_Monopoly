@@ -1,13 +1,12 @@
 package Monopoly.impl;
 
 
-import java.util.ArrayList;
-
 public class Player {
     private String name;
     private Piece piece;
     private Die[] dice;
     private Board board;
+    private int cash;
 
     public Player(String name, Die[] dice, Board board) {
         this.name = name;
@@ -39,5 +38,9 @@ public class Player {
 
     public Piece getPiece() {
         return piece;
+    }
+
+    public void addCash(int amount) {
+        cash += amount;
     }
 }
