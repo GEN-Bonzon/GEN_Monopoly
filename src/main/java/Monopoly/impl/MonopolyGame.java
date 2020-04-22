@@ -3,11 +3,11 @@ package Monopoly.impl;
 import java.util.ArrayList;
 
 public class MonopolyGame {
-    private final static int MAX_ROUNDS = 20;
+    private final static int NB_ROUNDS = 20;
 
     private int roundCnt;
     private Board board;
-    private Die dice[];
+    private Cup cup;
     private ArrayList<Player> players;
 
     public MonopolyGame(int nbPlayer) {
@@ -17,16 +17,16 @@ public class MonopolyGame {
 
         this.roundCnt = 0;
         this.board = new Board();
-        this.dice = new Die[] {new Die(), new Die()};
+        this.cup = new Cup(2);
         this.players = new ArrayList<>(nbPlayer);
 
         for(int i = 0; i < nbPlayer; ++i) {
-            this.players.add(i, new Player("Player#" + i, this.dice, this.board));
+            this.players.add(i, new Player("Player#" + i, this.cup, this.board));
         }
     }
 
     public void playGame() {
-        for(roundCnt = 0; roundCnt < MAX_ROUNDS; ++roundCnt) {
+        for(roundCnt = 0; roundCnt < NB_ROUNDS; ++roundCnt) {
             playRound();
         }
     }

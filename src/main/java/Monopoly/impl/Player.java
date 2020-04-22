@@ -4,17 +4,15 @@ package Monopoly.impl;
 public class Player {
     private String name;
     private Piece piece;
-    private Die[] dice;
+    private Cup cup;
     private Board board;
     private int cash;
-    private Cup cup;
 
-    public Player(String name, Die[] dice, Board board) {
+    public Player(String name, Cup cup, Board board) {
         this.name = name;
         this.piece = new Piece("pieceOf" + this.name, board.getSquare(0));
-        this.dice = dice;
+        this.cup = cup;
         this.board = board;
-        this.cup = new Cup(2);
     }
 
     public void takeTurn() {
@@ -55,5 +53,10 @@ public class Player {
 
     public Board getBoard() {
         return board;
+    }
+
+    @Override
+    public String toString() {
+        return name + " has " + cash;
     }
 }

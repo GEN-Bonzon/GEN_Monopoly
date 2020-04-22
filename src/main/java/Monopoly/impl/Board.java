@@ -9,11 +9,14 @@ public class Board {
     public Board() {
         squares = new ArrayList<>();
 
-        squares.add(0, new GoSquare("GO"));
-
-        for(int i = 1; i < MAX_SQUARES; ++i) {
+        for(int i = 0; i < MAX_SQUARES; ++i) {
             squares.add(i, new RegularSquare("Square#" + i));
         }
+
+        squares.set(0, new GoSquare("GO"));
+        squares.set(10, new RegularSquare("Jail"));
+        squares.set(20, new IncomeTaxSquare("Taxes"));
+        squares.set(30, new GoToJailSquare("Goto Jail"));
     }
 
     public Square getSquare(int index) {

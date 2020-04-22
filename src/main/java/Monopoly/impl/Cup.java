@@ -1,7 +1,5 @@
 package Monopoly.impl;
 
-import java.util.ArrayList;
-
 public class Cup {
     private int total;
     private Die dice[];
