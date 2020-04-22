@@ -7,6 +7,9 @@ import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * @author Tiffany Bonzon
+ */
 public class MonopolyGameTests {
     @Test
     void theMonopolyGameLastsFor20Rounds() {
@@ -29,5 +32,16 @@ public class MonopolyGameTests {
         String expectedMessage = "There should be between 2 and 8 players";
         String actualMessage = exception.getMessage();
         assertEquals(expectedMessage, actualMessage);
+    }
+
+    @ParameterizedTest
+    @ValueSource(ints = {2, 5, 8})
+    void theMonopolyGameShouldInitializeTheCorrectNumberOfPlayers(int nbPlayers) {
+        MonopolyGame monopolyGame = new MonopolyGame(nbPlayers);
+
+        int expected = nbPlayers;
+        int obtained = monopolyGame.getPlayersCnt();
+
+        assertEquals(expected, obtained);
     }
 }
