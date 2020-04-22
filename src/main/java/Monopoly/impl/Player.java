@@ -13,6 +13,7 @@ public class Player {
         this.piece = new Piece("pieceOf" + this.name, board.getSquare(0));
         this.cup = cup;
         this.board = board;
+        this.cash = 1500;
     }
 
     public void takeTurn() {

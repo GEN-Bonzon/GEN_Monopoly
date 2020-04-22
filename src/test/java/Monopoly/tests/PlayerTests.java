@@ -21,7 +21,7 @@ public class PlayerTests {
     }
 
     @Test
-    void aPlayerShouldStartInTheStartingSquare() {
+    void aPlayerShouldStartInTheGOSquare() {
         Player player = new Player("Jim", cup, board);
         String obtained = player.getPiece().getLocation().getName();
 
@@ -32,11 +32,16 @@ public class PlayerTests {
     void aPlayerShouldHaveAName() {
         Player player = new Player("James", cup, board);
         assertNotNull(player.getName());
+    }
+
+    @Test
+    void aPlayerShouldHaveTheCorrectName() {
+        Player player = new Player("James", cup, board);
         assertEquals("James", player.getName());
     }
 
     @RepeatedTest(100)
-    void aPlayerNeverStaysOnTheSameSquare() {
+    void aPlayerNeverStaysOnTheSameSquareAfterTheirTurn() {
         Player player = new Player("Jake", cup, board);
         Square previousSquare = player.getPiece().getLocation();
 
@@ -44,5 +49,11 @@ public class PlayerTests {
         if(previousSquare == (player.getPiece().getLocation())) {
             fail();
         }
+    }
+
+    @Test
+    void thePlayerShouldStartWithTheCorrectAmountOfCash() {
+        Player player = new Player("James", cup, board);
+        assertEquals(1500, player.getNetWorth());
     }
 }

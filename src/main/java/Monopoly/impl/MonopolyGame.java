@@ -40,4 +40,8 @@ public class MonopolyGame {
     public int getRoundCnt() {
         return roundCnt;
     }
+
+    public int getPlayersCnt() {
+        return players.size();
+    }
 }

@@ -30,4 +30,15 @@ public class MonopolyGameTests {
         String actualMessage = exception.getMessage();
         assertEquals(expectedMessage, actualMessage);
     }
+
+    @ParameterizedTest
+    @ValueSource(ints = {2, 5, 8})
+    void theMonopolyGameShouldInitializeTheCorrectNumberOfPlayers(int nbPlayers) {
+        MonopolyGame monopolyGame = new MonopolyGame(nbPlayers);
+
+        int expected = nbPlayers;
+        int obtained = monopolyGame.getPlayersCnt();
+
+        assertEquals(expected, obtained);
+    }
 }

@@ -1,17 +1,24 @@
 package Monopoly.tests;
 
+import Monopoly.impl.Board;
 import Monopoly.impl.Piece;
 import Monopoly.impl.Square;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class PieceTests {
-    /*
+    Board borad;
+    @BeforeEach
+    void initBoard() {
+        borad = new Board();
+    }
+
     @Test
     void aPieceIsPlacedOnTheDesiredSquare() {
-        String expected = "s1";
-        Square square = new Square(expected);
+        String expected = "Square#6";
+        Square square = borad.getSquare(6);
         Piece piece = new Piece("p1", square);
 
         assertEquals(expected, piece.getLocation().getName());
@@ -19,13 +26,12 @@ public class PieceTests {
 
     @Test
     void aPieceCanBeMovedToADesiredLocation() {
-        String expected = "s21";
-        Square square = new Square("s1");
+        String expected = "Jail";
+        Square square = borad.getSquare(6);
         Piece piece = new Piece("p1", square);
 
-        piece.setLocation(new Square (expected));
+        piece.setLocation(borad.getSquare(10));
 
         assertEquals(expected, piece.getLocation().getName());
     }
-     */
 }
