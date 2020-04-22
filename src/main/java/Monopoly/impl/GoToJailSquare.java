@@ -10,9 +10,4 @@ public class GoToJailSquare extends Square {
         Square jail = player.getBoard().getSquare(10);
         player.getPiece().setLocation(jail);
     }
-
-    @Override
-    public String getName() {
-        return super.getName() + "(--> Jail)";
-    }
 }
