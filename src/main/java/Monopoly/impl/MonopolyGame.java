@@ -23,11 +23,20 @@ public class MonopolyGame {
         for(int i = 0; i < nbPlayer; ++i) {
             this.players.add(i, new Player("Player#" + i, this.cup, this.board));
         }
+
+        System.out.println("Création de la game avec " + nbPlayer + " players");
     }
 
     public void playGame() {
+        System.out.println("-------- Début des rounds --------");
         for(roundCnt = 0; roundCnt < NB_ROUNDS; ++roundCnt) {
+            System.out.println("Round#" + roundCnt);
             playRound();
+        }
+
+        System.out.println("-------- Fin des rounds --------");
+        for (Player p: players) {
+            System.out.println(p);
         }
     }
 

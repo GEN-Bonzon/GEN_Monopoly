@@ -21,12 +21,16 @@ public class Player {
         cup.roll();
         int rollValue = cup.getTotal();
 
+        System.out.print("\t" + name + " a lancé un " + rollValue);
+
         //Calc new location
         Square oldLoc = piece.getLocation();
         Square newLoc = board.getSquare(oldLoc, rollValue);
 
         //Move to new location
         piece.setLocation(newLoc);
+
+        System.out.println(" et bouge sur la case " + getPiece().getLocation().getName());
 
         //Check which type of Square the player landed
         piece.getLocation().landedOn(this);
