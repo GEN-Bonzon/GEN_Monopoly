@@ -5,6 +5,9 @@ import org.junit.jupiter.api.RepeatedTest;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * @author Tiffany Bonzon
+ */
 public class CupTests {
     Cup cup = new Cup(2);
 

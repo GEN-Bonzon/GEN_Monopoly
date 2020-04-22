@@ -5,6 +5,9 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * @author Tiffany Bonzon
+ */
 public class SquaresTests {
     Cup cup = new Cup(0);
     Board board = new Board();

@@ -7,6 +7,9 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * @author Tiffany Bonzon
+ */
 public class BoardTests {
     private Board board;
 

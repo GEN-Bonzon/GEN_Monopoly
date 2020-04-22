@@ -7,6 +7,9 @@ import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * @author Tiffany Bonzon
+ */
 public class MonopolyGameTests {
     @Test
     void theMonopolyGameLastsFor20Rounds() {

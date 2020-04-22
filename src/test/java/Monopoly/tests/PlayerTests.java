@@ -10,6 +10,9 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * @author Tiffany Bonzon
+ */
 public class PlayerTests {
     Board board;
     Cup cup = new Cup(2);;

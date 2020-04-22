@@ -1,6 +1,9 @@
 package Monopoly.impl;
 
-
+/**
+ * Represents a Player
+ * @author Tiffany Bonzon
+ */
 public class Player {
     private String name;
     private Piece piece;
@@ -8,6 +11,12 @@ public class Player {
     private Board board;
     private int cash;
 
+    /**
+     * Constructor
+     * @param name The name of the player
+     * @param cup The cup containing the dice
+     * @param board The Board of the game
+     */
     public Player(String name, Cup cup, Board board) {
         this.name = name;
         this.piece = new Piece("pieceOf" + this.name, board.getSquare(0));
@@ -16,6 +25,9 @@ public class Player {
         this.cash = 1500;
     }
 
+    /**
+     * Player's turn
+     */
     public void takeTurn() {
         //Roll dice
         cup.roll();
@@ -36,26 +48,50 @@ public class Player {
         piece.getLocation().landedOn(this);
     }
 
+    /**
+     * Returns the name of the player
+     * @return the name of the player
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * Returns the Piece of the Player
+     * @return the Piece of the Player
+     */
     public Piece getPiece() {
         return piece;
     }
 
+    /**
+     * Adds cash to the player's account
+     * @param amount The amount to add
+     */
     public void addCash(int amount) {
         cash += amount;
     }
 
+    /**
+     * Removes cash from the player's account
+     * @param amount The amount to deduce
+     */
     public void reduceCash(int amount) {
         cash -= amount;
     }
 
+    /**
+     * Returns the player's networth
+     * @return the player's networth
+     */
     public int getNetWorth() {
         return cash;
     }
 
+    /**
+     * Returns the Board
+     * @return the Board
+     */
     public Board getBoard() {
         return board;
     }
