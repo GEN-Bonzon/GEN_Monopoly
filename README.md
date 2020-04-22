@@ -1,5 +1,5 @@
 # GEN Labo Monopoly
-Auteur: Tiffany Bonzon
+Auteure: Tiffany Bonzon
 
 
 
