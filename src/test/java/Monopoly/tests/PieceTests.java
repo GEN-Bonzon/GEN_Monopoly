@@ -9,16 +9,17 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class PieceTests {
-    Board borad;
+    Board board;
+
     @BeforeEach
     void initBoard() {
-        borad = new Board();
+        board = new Board();
     }
 
     @Test
     void aPieceIsPlacedOnTheDesiredSquare() {
         String expected = "Square#6";
-        Square square = borad.getSquare(6);
+        Square square = board.getSquare(6);
         Piece piece = new Piece("p1", square);
 
         assertEquals(expected, piece.getLocation().getName());
@@ -27,10 +28,10 @@ public class PieceTests {
     @Test
     void aPieceCanBeMovedToADesiredLocation() {
         String expected = "Jail";
-        Square square = borad.getSquare(6);
+        Square square = board.getSquare(6);
         Piece piece = new Piece("p1", square);
 
-        piece.setLocation(borad.getSquare(10));
+        piece.setLocation(board.getSquare(10));
 
         assertEquals(expected, piece.getLocation().getName());
     }

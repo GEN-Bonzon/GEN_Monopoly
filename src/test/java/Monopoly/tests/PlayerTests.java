@@ -12,12 +12,11 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class PlayerTests {
     Board board;
-    Cup cup;
+    Cup cup = new Cup(2);;
 
     @BeforeEach
     void init() {
         board = new Board();
-        cup = new Cup(2);
     }
 
     @Test

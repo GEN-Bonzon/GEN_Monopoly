@@ -9,7 +9,7 @@ public class CupTests {
     Cup cup = new Cup(2);
 
     @RepeatedTest(1000)
-    public void theCupShouldAlwaysBebetween2And12() {
+    public void theCupShouldAlwaysBeBetween2And12() {
         cup.roll();
 
         assertTrue(cup.getTotal() < 13);
